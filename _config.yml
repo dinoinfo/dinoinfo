@@ -1,15 +1,18 @@
 # Site
-name: 'Pintereso'
+title: 'Dino Info'
 description: 'Pintereso is a free Jekyll theme for awesome people like you, Pinterest like.'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: '/template-pintereso-bootstrap-jekyll'
 avatar: 'assets/images/sal.jpg'
 disqus: 'demowebsite'
-email: 'wowthemesnet@gmail.com'
 
 include: ["_pages"]
 permalink: /:title/
+
+port: 4001
+host: 0.0.0.0
+baseurl: 
+
 
 # Plugins
 plugins: 
@@ -33,10 +36,39 @@ defaults:
     values:
       layout: page
       
-      
 # Syntax
 markdown: kramdown
+
+
+
+      
+# github sets these, can override
+
+github: [metadata]
+encoding: UTF-8
+kramdown:
+  input: GFM
+  hard_wrap: false
+future: true
+jailed: false
+theme: jekyll-theme-primer
+gfm_quirks: paragraph_end
+
+
+# github sets these, cannot override 
+
+lsi: false
+safe: true
+incremental: false
 highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+
+
 
 # Pagination
 paginate: 20
