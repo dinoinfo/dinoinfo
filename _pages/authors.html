@@ -1,0 +1,37 @@
+---
+title: "Authors"
+layout: default
+permalink: "/authors.html"
+---
+
+<section class="mt-4 mb-5">
+    
+    <div class="container mb-1">
+        <h1 class="font-weight-bold title">Authors</h1>    
+        <div class="row">
+        {% include menu-authors.html %}
+        </div>
+    </div>
+
+
+<div class="container-fluid">
+    <div class="card-columns">
+    {% assign authors = site.posts | group_by: "author" %}
+    {% for author in authors %}
+    </div> 
+    
+    <h3 class="mt-4 display-4" id="{{ author.name | downcase }}"><small class="text-muted">#</small> {{ author.name }}</h3><hr>
+    
+    <div class="card-columns">
+
+        {% for post in author.items %}
+          {% if post.title != null %}
+            {% include card-post.html %}
+          {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+    </div>
+</div>
+    
+</section>
